@@ -1,0 +1,63 @@
+body{
+    background-color: black;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(https://images.unsplash.com/photo-1516248282510-3a829f0686d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+
+.container{
+    padding: 30px 20px 30px 20px;
+    margin-top: 40px;
+    width: 50%;
+    background-color: white;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+.form-control-error{
+
+    background-color: transparent;
+
+}
+
+small{
+    color: red;
+}
+
+form{
+    padding-left: 7rem;
+}
+
+form h2{
+
+    margin-left: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"],input[type="email"]{
+    width: 75%;
+}
+
+.btn-primary{
+    width: 40%;
+    margin: auto;
+}
+
+.button-collection{
+
+    margin-left: 8rem ;
+
+}
+
+
+ #add-passenger-btn{
+    margin-top: 0.5rem;
+}
+
+#submit-btn{
+    margin-top: 1rem;
+} 
