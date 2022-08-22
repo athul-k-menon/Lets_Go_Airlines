@@ -1,3 +1,5 @@
+
+
 function populateCards(flightData) {
 
     const length = Object.keys(flightData).length;
@@ -49,7 +51,7 @@ function getFlightID(flightID){
 
     window.localStorage.clear();
     localStorage.setItem("FlightID",flightID);
-    location.href = "bookingDetails.html";
+    location.href = "booking.html";
   
 }
 

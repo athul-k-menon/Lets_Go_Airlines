@@ -19,32 +19,47 @@ body{
 
 .container-info{
     margin-top: 25px;
-    margin-left: 175px;
+    margin-left: 50px;
     display: flex;
     
 }
 
+#homepage{
+    margin-left: 30px;
+    margin-top: 20px;
+}
 
 
 .left{
 
-    width: 500px;
+    width: 400px;
     
 }
 
 .left h3{
-    margin-left: 195px;
+    margin-left: 145px;
 }
 
 
 .right{
     margin-left: 50px;
-    width: 500px;
+    width: 400px;
 }
 
 .right h3{
 
-    margin-left: 160px;
+    margin-left: 120px;
+
+}
+
+.right-right{
+    margin-left: 50px;
+    width: 400px;
+}
+
+.right-right h3{
+
+    margin-left: 80px;
 
 }
 
