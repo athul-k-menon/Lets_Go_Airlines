@@ -7,14 +7,15 @@ var phoneno = document.getElementById("phoneNo");
 var submitBtn = document.getElementById("submit-btn");
 var addPassengerBtn = document.getElementById("add-passenger-btn");
 
-var secondPassengerfirstName;
-var secondPassengerlastName;
-var secondPassengerage;
+//Creating Second Passenger Form Objects
+var secondPassengerfirstName = document.getElementById("secondPassengerfirstName");
+var secondPassengerlastName = document.getElementById("secondPassengerlastName");
+var secondPassengerage = document.getElementById("secondPassengerage");
 
 
 
 //Regular Expression for Form Elements
-var name_regex = /^[a-zA-Z]{0,20}$/;
+var name_regex = /^[a-zA-Z]{1,20}$/;
 var age_regex = /^0?1[89]|0?[2-9][0-9]$/;
 var email_regex = /\S+@\S+\.\S+/;
 var phone_regex = /^[0-9]{10}$/;
@@ -22,21 +23,31 @@ var phone_regex = /^[0-9]{10}$/;
 //Disable Submit Button
 submitBtn.disabled = "true";
 
+//Disable Add Passenger Button
+addPassengerBtn.disabled = "true";
+
 
 let inputValidator = {
     "firstn": false,
     "lastn": false,
     "ageperson": false,
     "emailid": false,
-    "phonenumber": false
+    "phonenumber": false,
+    "secondfirstn": false,
+    "secondlastn": false,
+    "secondage" : false
 };
 
 
+//Creating Event Listeners
 firstName.addEventListener('input', validateFirstName)
 lastName.addEventListener('input', validateLastName)
 age.addEventListener('input', validateAge)
 email.addEventListener('input', validateEmail)
 phoneno.addEventListener('input', validatePhoneNo)
+secondPassengerfirstName.addEventListener('input',validateSecondFirstName)
+secondPassengerlastName.addEventListener('input',validateSecondLastName)
+secondPassengerage.addEventListener('input',validateSecondAge)
 
 
 //To show error if invalid input is given
@@ -69,10 +80,11 @@ function buttonRelease() {
     if (result) {
 
         submitBtn.removeAttribute("disabled");
+        addPassengerBtn.removeAttribute("disabled");
         console.log("Submit button active");
     }
     else {
-        submitBtn.disabled = "true";
+        addPassengerBtn.disabled = "true";
         console.log("Submit button not active");
     }
 }
@@ -93,55 +105,14 @@ function displayRadioValue(val) {
 }
 
 
-
+//To add Second Passenger Form
 function addSecondPassengerForm() {
     submitBtn.parentNode.removeChild(submitBtn);
     addPassengerBtn.parentNode.removeChild(addPassengerBtn);
 
-    var form = `
-      <form action="confirmation.html" class="secondPassenger">
-              <h2 id="second-title">2nd Passenger Details</h2>
-              <div class="mb-3">
-                  <label for="firstName" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="secondPassengerfirstName" required>
-              </div>
-              <div class="mb-3">
-                  <label for="lastName" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="secondPassengerlastName" required>
-              </div>
-              <div class="mb-3">
-                  <label for="age" class="form-label">Age</label>
-                  <input type="text" class="form-control" id="secondPassengerage" required>
-              </div>
-              <div class="radio-box">
-                  <label for="gender" class="form-label">Gender</label><br>
-                  <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="male" value="Male" name="secondgender" checked required>
-                      <label class="form-check-label" for="male">Male</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="female" value="Female" name="secondgender">
-                      <label class="form-check-label" for="female">Female</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="other" value="Other" name="secondgender">
-                      <label class="form-check-label" for="other">Other</label>
-                  </div>
-              </div>
-              <br>
-              <div class="button-collection">
-                  <div class="submitBtn">
-                      <button type="submit" class="btn btn-primary" id="submit-btn-2" onclick="submitFunc()">Submit</button>
-                  </div>
-              </div>
-          </form>
-      
-      `;
-
-    document.getElementById("second-passenger").innerHTML = form;
+    document.getElementById("second-passenger").style = "display:true";
     document.getElementById("second-passenger").style =
         "background: rgba(255,255,255,0.5);backdrop-filter: blur(5px);";
-
 
 }
 
@@ -165,6 +136,28 @@ function validateFirstName() {
 
     }
 }
+
+//To Validate Second Passenger First Name
+function validateSecondFirstName() {
+
+    console.log(secondPassengerfirstName.value);
+
+    if (name_regex.test(secondPassengerfirstName.value)) {
+        valid(secondPassengerfirstName);
+        removeError(secondPassengerfirstName);
+        inputValidator.secondfirstn = true;
+        buttonRelease();
+    }
+    else {
+
+        invalid(secondPassengerfirstName);
+        showError(secondPassengerfirstName, "Only Alphabets. Maximum 20 characters.");
+        inputValidator.secondfirstn = false;
+
+    }
+}
+
+
 
 
 
@@ -190,6 +183,28 @@ function validateLastName() {
 
 }
 
+//To Validate Second Passenger Last Name
+function validateSecondLastName() {
+
+    console.log(secondPassengerlastName.value);
+
+    if (name_regex.test(secondPassengerlastName.value)) {
+        valid(secondPassengerlastName);
+        removeError(secondPassengerlastName);
+        inputValidator.secondlastn = true;
+        buttonRelease();
+
+    }
+    else {
+
+        invalid(secondPassengerlastName);
+        inputValidator.secondlastn = false;
+        showError(secondPassengerlastName, "Only Alphabets. Maximum 20 characters.");
+
+    }
+
+}
+
 //To Validate Age
 function validateAge() {
 
@@ -210,7 +225,28 @@ function validateAge() {
         showError(age, "Minimum 18 Years");
 
     }
+}
 
+//To Validate Second Passenger Age
+function validateSecondAge() {
+
+    console.log(secondPassengerage.value);
+
+    if (age_regex.test(secondPassengerage.value)) {
+        valid(secondPassengerage);
+        removeError(secondPassengerage);
+        inputValidator.secondage = true;
+        buttonRelease();
+
+    }
+    else {
+
+        invalid(secondPassengerage);
+        inputValidator.secondage = false;
+        buttonRelease();
+        showError(secondPassengerage, "Minimum 18 Years");
+
+    }
 }
 
 //To Validate Email Address
@@ -275,13 +311,11 @@ function invalid(element) {
 
 function secondPassengerValidate() {
 
-    secondPassengerfirstName = document.getElementById("secondPassengerfirstName");
-    secondPassengerlastName = document.getElementById("secondPassengerlastName");
-    secondPassengerage = document.getElementById("secondPassengerage");
 
-    secondPassengerfirstName.addEventListener('input',validateFirstName)
-    secondPassengerlastName.addEventListener('input',validateLastName)
-    secondPassengerage.addEventListener('input',validateAge)
+
+    secondPassengerfirstName.addEventListener('input', validateFirstName)
+    secondPassengerlastName.addEventListener('input', validateLastName)
+    secondPassengerage.addEventListener('input', validateAge)
 
 
 }
@@ -310,8 +344,6 @@ function secondPassengerStorage() {
     secondPassengerlastName = document.getElementById("secondPassengerlastName");
     secondPassengerage = document.getElementById("secondPassengerage");
 
-    secondPassengerValidate();
-
     var secondgender = displayRadioValue("secondgender");
 
     localStorage.setItem("SecondFirstName", secondPassengerfirstName.value);
@@ -319,7 +351,25 @@ function secondPassengerStorage() {
     localStorage.setItem("SecondAge", secondPassengerage.value);
     localStorage.setItem("SecondGender", secondgender);
 
+}
 
+function secondPassengerValidate(fname, lname, age) {
+
+    console.log('entered validation');
+
+    fname.addEventListener('onkeyup', function () {
+
+        console.log(fname);
+
+        if (name_regex.test(fname.value)) {
+            valid(fname);
+        }
+        else {
+            invalid(fname);
+        }
+
+
+    })
 
 }
 
@@ -329,8 +379,6 @@ function submitFunc() {
 
     firstPassengerStorage();
     secondPassengerStorage();
-
-
 
 }
 

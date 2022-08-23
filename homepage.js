@@ -1,5 +1,4 @@
-
-
+//To Display Flight Details
 function populateCards(flightData) {
 
     const length = Object.keys(flightData).length;
@@ -8,16 +7,12 @@ function populateCards(flightData) {
 
     for (let i = 0; i < length; i++) {
 
+        // To convert Date and Time to UTC
         let flightObj = flightData[i];
         const departTime = new Date(flightObj.departTime)
         const arriveTime = new Date(flightObj.ArrivalTime)
 
-
-
-
         content += `
-
-            
 
         <div class="col">    
             <div class="card" >
@@ -41,24 +36,21 @@ function populateCards(flightData) {
         `
     }
 
-    document.querySelector("#cardrow").innerHTML = content; 
-
-
+    document.querySelector("#cardrow").innerHTML = content;
 
 }
 
-function getFlightID(flightID){
+//To store Flight ID
+function getFlightID(flightID) {
 
     window.localStorage.clear();
-    localStorage.setItem("FlightID",flightID);
+    localStorage.setItem("FlightID", flightID);
     location.href = "booking.html";
-  
+
 }
 
 
-
-
-
+//To access Flight Data
 fetch('flights.json')
     .then(response => {
         return response.json();
@@ -70,7 +62,6 @@ fetch('flights.json')
     });
 
 
-    
 
 
-      
+

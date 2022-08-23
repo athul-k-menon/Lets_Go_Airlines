@@ -22,17 +22,17 @@
 
             <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" required />
+                <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required />
                 <small></small>
             </div>
             <div class="mb-3">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" required />
+                <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required />
                 <small></small>
             </div>
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="age" required />
+                <input type="number" class="form-control" id="age" placeholder="Enter Age" required />
                 <small></small>
             </div>
             <div class="radio-box">
@@ -55,12 +55,12 @@
 
             <div class="mb-3">
                 <label for="emailAddress" class="form-label">Email</label>
-                <input type="email" class="form-control" id="emailAddress" required />
+                <input type="email" class="form-control" id="emailAddress" placeholder="Enter Email Address" required />
                 <small></small>
             </div>
             <div class="mb-3">
                 <label for="phoneNo" class="form-label">Phone Number</label>
-                <input type="text" class="form-control" id="phoneNo" required />
+                <input type="text" class="form-control" id="phoneNo" placeholder="Enter Phone Number" required />
                 <small></small>
             </div>
             <div class="button-collection">
@@ -79,7 +79,47 @@
         </form>
     </div>
 
-    <div class="second-passenger" id="second-passenger"></div>
+    <div class="second-passenger" id="second-passenger" style="display: none;">
+        <form action="confirmation.html" class="secondPassenger">
+            <h2 id="second-title">2nd Passenger Details</h2>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="secondPassengerfirstName" placeholder="Enter First Name" required>
+                <small></small>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="secondPassengerlastName" placeholder="Enter Last Name" required>
+                <small></small>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" class="form-control" id="secondPassengerage" placeholder="Enter Age" required>
+                <small></small>
+            </div>
+            <div class="radio-box">
+                <label for="gender" class="form-label">Gender</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="male" value="Male" name="secondgender" checked required>
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="female" value="Female" name="secondgender">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="other" value="Other" name="secondgender">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+            </div>
+            <br>
+            <div class="button-collection">
+                <div class="submitBtn">
+                    <button type="submit" class="btn btn-primary" id="submit-btn-2" onclick="submitFunc()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <script src="booking.js"></script>
 </body>
