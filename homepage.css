@@ -12,6 +12,7 @@ header{
 
     position: sticky;
     top: 0px;
+    z-index: 99999999;
 }
 
 main{
@@ -22,6 +23,7 @@ img{
     border-radius: 13px;
 }
 
+/*Section Style Rules*/
 section{
     display: flex;
     flex-direction: column;
@@ -36,12 +38,14 @@ section{
     background-attachment: fixed;
 }
 
+/*Bootstrap Card Style Rules*/
 .card{
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 50px;
     background-color: rgba(255,255,255,0.5);
     backdrop-filter: blur(5px);
+
     width: 400px;
 
 }
@@ -52,6 +56,8 @@ h1{
     font-size: 72px;
     
 }
+
+
 #welcome-title{
 
     background: -webkit-linear-gradient(rgb(63, 63, 63), rgb(15, 64, 170));
@@ -88,7 +94,7 @@ p{
     display: flex;
 }
 
-
+/*Home Section Style Rules*/
 #home{
 
     height: 55px;
@@ -105,7 +111,7 @@ p{
     margin-top: 10px;
 }
 
-
+/*Overview Section Style Rules*/
 #overview{
     padding: 0px 50px 0px 40px;
 
@@ -115,13 +121,14 @@ p{
 
 .overview-container{
     display: flex;
+    margin-left: 40%;
 }
 
 .overview-container h5{
-    padding-left: 15px;
+    padding-left: 25px;
 }
 
-
+/*Vision Section Style Rules*/
 #vision{
     padding: 0px 50px 0px 40px;
 
@@ -129,6 +136,9 @@ p{
 
 }
 
+.overview-text{
+    margin-left: 150px;
+}
 
 .vision-container{
     display: flex;
@@ -138,26 +148,29 @@ p{
     padding-left: 5px;
 }
 
-
+/*Home Section Style Rules*/
 #values{
     padding: 0px 50px 0px 80px;
 
 }
 
-.values-container{
+.values-wrapper{
     display: flex;
+    flex-direction: row;
 }
 
 .values-container h5{
     padding-left: 15px;
 }
 
-#flights{
-
-    padding: 100px 0px 0px 0px;
-    width: 100%;
-    
-    
+.values-container{
+    width: 60%;
+    margin-left: 5%;
+    margin-right: 8%;
+}
+/*Flight Section Style Rules*/
+#flights_section{
+    height: 150vh;
 }
 
 .flights-container{
@@ -167,16 +180,13 @@ p{
 .flights-container h5{
     padding-left: 15px;
 }
-
-#flights_section{
-    height: 150vh;
+.values-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-/*
-#values{
+
+
+.overview-body{
     display: flex;
 }
-.values-wrapper{
-    text-align: center;
-}
-
-*/

@@ -52,6 +52,7 @@ form h2 {
     margin-bottom: 1rem;
 }
 
+/* Input Style Rules*/
 input[type="text"],
 input[type="email"] {
     width: 75%;
@@ -68,14 +69,16 @@ input[type="email"] {
 
 }
 
-
+/* Add Passenger Button Style Rules*/
 #add-passenger-btn {
     margin-top: 10px;
 }
 
+/* Submit Button Style Rules*/
 #submit-btn {
     margin-top: 10px;
 }
+
 
 #age{
     width: 75%;

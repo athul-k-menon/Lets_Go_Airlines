@@ -2,7 +2,6 @@
 function populateCards(flightData) {
 
     const length = Object.keys(flightData).length;
-    console.log(length);
     let content = '';
 
     for (let i = 0; i < length; i++) {
@@ -43,23 +42,32 @@ function populateCards(flightData) {
 //To store Flight ID
 function getFlightID(flightID) {
 
-    window.localStorage.clear();
-    localStorage.setItem("FlightID", flightID);
+    window.sessionStorage.clear();
+    sessionStorage.setItem("FlightID", flightID);
     location.href = "booking.html";
 
+}
+
+//Scroll to Top
+function toTop() {
+    window.scrollTo(0, 0);
 }
 
 
 //To access Flight Data
 fetch('flights.json')
     .then(response => {
+
         return response.json();
     })
+
     .then(data => {
 
         populateCards(data);
-
     });
+
+
+
 
 
 

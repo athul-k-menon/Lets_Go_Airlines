@@ -15,7 +15,7 @@ img{
 .container h2{
 
     margin-left: 550px;
-    color: green;
+    color: saddlebrown;
     padding-left: 10px;
     margin-top: 0px;
     font-weight: bolder;
@@ -100,7 +100,7 @@ img{
 }
 
 .blink {
-    animation: blinker 1.5s linear infinite;
+    animation: blinker 2.5s linear infinite;
     font-family: sans-serif;
 }
 

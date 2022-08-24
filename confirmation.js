@@ -20,13 +20,13 @@ var arriveTime = document.getElementById("arrivet");
 var price = document.getElementById("price");
 
 //Accessing Passenger Details From Storage
-var flightID = localStorage.getItem("FlightID");
-var firstname = localStorage.getItem("FirstName");
-var lastname = localStorage.getItem("LastName");
-var Gender = localStorage.getItem("Gender");
-var Age = localStorage.getItem("Age");
-var EmailID = localStorage.getItem("EmailID");
-var PhoneNo = localStorage.getItem("PhoneNo");
+var flightID = sessionStorage.getItem("FlightID");
+var firstname = sessionStorage.getItem("FirstName");
+var lastname = sessionStorage.getItem("LastName");
+var Gender = sessionStorage.getItem("Gender");
+var Age = sessionStorage.getItem("Age");
+var EmailID = sessionStorage.getItem("EmailID");
+var PhoneNo = sessionStorage.getItem("PhoneNo");
 
 //Appending Passenger Details
 fname.innerHTML = firstname;
@@ -37,10 +37,10 @@ emailID.innerHTML = EmailID;
 phoneNO.innerHTML = PhoneNo;
 
 //Accessing Second Passenger Details From Storage
-var secondfirstname = localStorage.getItem("SecondFirstName");
-var secondlastname = localStorage.getItem("SecondLastName");
-var secondGender = localStorage.getItem("SecondAge");
-var secondAge = localStorage.getItem("SecondGender");
+var secondfirstname = sessionStorage.getItem("SecondFirstName");
+var secondlastname = sessionStorage.getItem("SecondLastName");
+var secondGender = sessionStorage.getItem("SecondAge");
+var secondAge = sessionStorage.getItem("SecondGender");
 
 
 //Appending Second Passenger Details
@@ -51,34 +51,11 @@ sgender.innerHTML = secondGender;
 
 
 //To check if Second Form is Empty
-if (secondfirstname != '') {
+if (secondfirstname != null) {
 
     document.getElementById("right-right").style = "display:true";
 }
 
-
-
-// function populateSecondPassengerDetails() {
-
-//     var content = `
-
-//         <h3>Second Passenger Details</h3>
-//           <div class="passenger-details">
-//             <h4>First Name</h4>
-//             <h5 id="sfirstname"></h5>
-//             <h4>Last Name</h4>
-//             <h5 id="slastname"></h5>
-//             <h4>Age</h4>
-//             <h5 id="sage"></h5>
-//             <h4>Gender</h4>
-//             <h5 id="sgender"></h5>
-//           </div>
-// `;
-
-//     console.log("About to insert");
-//     document.getElementById("right-right").innerHTML = content;
-
-// }
 
 
 
